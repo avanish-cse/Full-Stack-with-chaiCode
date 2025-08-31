@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to top right, rgb(255, 0, 195), rgb(115, 0, 255));
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    background-color: #fff;
+    width: 600px;
+    height: 400px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background: linear-gradient(to bottom right, rgb(255, 0, 195), rgb(115, 0, 255)); */
+    box-shadow: 0 0.5px 8px #000000a1;
+    backdrop-filter: blur(5px);
+    background: #d7d5d516;
+
+
+    h2 {
+        margin-bottom: 8px;
+        color: #fff;
+    }
+
+    p {
+        margin-bottom: 25px;
+        color: #ffffffba;
+    }
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+
+
+}
+
+input {
+    border: 1px solid black;
+    background-color: aliceblue;
+    padding: 8px;
+    border-radius: 5px;
+    outline: none;
+
+}
+
+input:active {
+    background-color: #c4cee2;
+}
+
+button {
+    background-color: rgb(13, 164, 235);
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    color: #fff;
+    transition: ease-out 0.2s;
+}
+
+button:hover {
+    background-color: blue;
+}
