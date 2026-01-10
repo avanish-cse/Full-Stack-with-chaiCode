@@ -7,7 +7,7 @@ let tasks = [];
 addTaskBtn.addEventListener("click", () => {
   const taskText = todoInput.value.trim();
 
-  if (taskText == "") return;
+  if (taskText === "") return;
 
   const newTask = {
     id: Date.now(),
@@ -18,5 +18,14 @@ addTaskBtn.addEventListener("click", () => {
   tasks.push(newTask);
   todoInput.value = ""
   console.log(tasks);
-  
+  saveTasksToLocalStorage()
 });
+
+function renderTask(task){
+
+}
+
+function saveTasksToLocalStorage(){
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+}
