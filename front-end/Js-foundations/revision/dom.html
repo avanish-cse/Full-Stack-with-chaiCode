@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .div{
+            background-color: #008080;
+            height: 250px;
+            width: 100px;
+            border: 2px solid #ffa500;
+        } */
+
+        .box{
+            min-height: 200px !important;
+            min-width: 150px !important;
+            border: 1px solid #000;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffa500 !important;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .padding {
+            padding: 15px;
+            margin: 5px;
+            min-height: 60px;
+            min-width: 150px;
+            background-color: #008080;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <div class="div">
+        <ul>
+            <li>items-1</li>
+            <li>items-2</li>
+            <li>items-3</li>
+            <li>items-4</li>
+        </ul>
+    </div>
+     -->
+
+
+    <div id="parent" class="box padding ">
+        <div id="child-1" class="padding"></div>
+        <div id="child-2" class="padding"></div>
+        <div id="child-3" class="padding"></div>
+    </div> 
+
+    <script src="./dom.js"></script>
+</body>
+</html>

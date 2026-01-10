@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .white {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .black {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: #008080;
+            color: #fff;
+            margin: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body class="white" id="body">
+
+    <button id="darkMode">Dark mode</button>
+    <br> <br>
+    <hr>
+
+    <!-- inline event handeling -->
+    <button onclick="console.log('Button was clicked'); alert('Hello')">Click me</button>
+
+    <button ondblclick="console.log('Double clicked');">Click me 2x
+    </button>
+
+    <div class="box" onmouseover="console.log('You ae hovering on the div');">
+        this is a box
+    </div>
+    <hr>
+    <h3>Event handeling from Js file</h3>
+    <button id="jsButton">Click Here !!</button>
+
+    <hr>
+    <h3>Using Event Object</h3>
+    <div id="box2" class="box">
+    </div>
+    <button id="btn2">Click me</button>
+
+    <hr>
+    <br>
+    <!-- using event listener -->
+
+    <div class="box" id="div3" style="background-color: #ff4500;">
+
+    </div>
+
+    <button id="btn3">Clcli here</button>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
