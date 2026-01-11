@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Design Tokens ===== */
+:root {
+  --glass-strong: rgba(255, 255, 255, 0.14);
+  --glass-medium: rgba(255, 255, 255, 0.1);
+  --glass-soft: rgba(255, 255, 255, 0.06);
+
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-highlight: rgba(255, 255, 255, 0.35);
+
+  --accent-primary: rgba(150, 190, 255, 0.45);
+  --accent-primary-hover: rgba(150, 190, 255, 0.65);
+
+  --accent-danger: rgba(255, 90, 110, 0.85);
+  --accent-danger-hover: rgba(255, 70, 90, 1);
+}
+
+/* ===== Body ===== */
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top, #1d2129, #0c0e12);
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ===== Task Card ===== */
+.task-card {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 460px;
+
+  padding: 3rem;
+  border-radius: 1.1rem;
+
+  background-image: url("https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdGl2ZXxlbnwwfHwwfHx8MA%3D%3D");
+  background-size: cover;
+  background-position: center;
+
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6),
+    inset 0 0 1px var(--glass-highlight);
+}
+
+/* Dark overlay */
+.task-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.75)
+  );
+  z-index: 0;
+}
+
+.task-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.task-card h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+}
+
+/* ===== Input ===== */
+.task-card input {
+  width: 65%;
+
+  background: var(--glass-soft);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.55rem;
+
+  padding: 1rem 0.8rem;
+  margin-bottom: 0.6rem;
+  margin-right: 0.4rem;
+
+  color: #fff;
+  outline: none;
+}
+
+/* ===== Add Task Button ===== */
+#add-task-btn {
+  width: 32%;
+
+  background: var(--accent-primary);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  padding: 1rem 0.8rem;
+  border-radius: 0.55rem;
+
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#add-task-btn:hover {
+  background: var(--accent-primary-hover);
+}
+
+/* ===== Task List ===== */
+.task-card ul {
+  margin-top: 1.4rem;
+  list-style: none;
+}
+
+/* ===== Task Item ===== */
+li {
+  background: var(--glass-medium);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  margin: 8px 0;
+  padding: 0.7rem 1rem;
+
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Delete Button ===== */
+li button {
+  background: var(--accent-danger);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.45rem;
+
+  padding: 0.35rem 0.75rem;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ===== Completed ===== */
+.completed {
+  opacity: 0.55;
+  text-decoration: line-through rgba(255, 255, 255, 0.5);
+}
+
+/* ========================= */
+/* 📱 MOBILE (< 500px ONLY) */
+/* ========================= */
+
+@media (max-width: 499px) {
+  .task-card {
+    padding: 1.8rem;
+  }
+
+  .task-card h2 {
+    font-size: 1.35rem;
+    text-align: center;
+  }
+
+  .task-card input,
+  #add-task-btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.7rem;
+  }
+
+  .task-card input {
+    margin-bottom: 0.7rem;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  li button {
+    align-self: flex-end;
+  }
+}
