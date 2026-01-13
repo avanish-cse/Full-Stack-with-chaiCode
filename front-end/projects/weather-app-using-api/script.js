@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function getLatAndLong(city) {
     const country = "IN";
     const limit = 1;
-    const getLangLongUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=${limit}&appid=${API_KEY}`;
+    const getLangLongUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=${limit}&appid=${API_KEY}`;
 
     const response = await fetch(getLangLongUrl);
 
