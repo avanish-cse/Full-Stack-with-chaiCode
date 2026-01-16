@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: 1, name: "Samosa", price: 10.99 },
     { id: 2, name: "Raabadiai", price: 20.99 },
     { id: 3, name: "Ras-Malai", price: 25.999 },
+    { id: 4, name: "Barfi", price: 20.995 },
   ];
 
   products.forEach((product) => {
@@ -22,5 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
     productList.appendChild(productDiv);
   });
 
-  
+  productList.addEventListener("click", (evt) => {
+    if (evt.target.tagName === "BUTTON") {
+      const productId = parseInt(evt.target.getAttribute("data-id"));
+      console.log(productId);
+      const product = products.find((p) => p.id === productId);
+      addToCart(product);
+      console.log(product);
+    }
+  });
+
+  function addToCart(product) {
+    if (!emptyCartMessage.classList.contains("hidden")) {
+      emptyCartMessage.classList.add("hidden");}
+      const div = document.createElement('div');
+      div.innerHTML = `
+      <span>${product.name}: $${product.price.toFixed(2)}</span>
+      `;
+      div.classList.add('product')
+      cartItems.appendChild(div);
+    
+  }
 });
