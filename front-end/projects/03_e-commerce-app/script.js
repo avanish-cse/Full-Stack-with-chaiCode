@@ -35,13 +35,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function addToCart(product) {
     if (!emptyCartMessage.classList.contains("hidden")) {
-      emptyCartMessage.classList.add("hidden");}
-      const div = document.createElement('div');
-      div.innerHTML = `
+      emptyCartMessage.classList.add("hidden");
+    }
+    const div = document.createElement("div");
+    div.innerHTML = `
       <span>${product.name}: $${product.price.toFixed(2)}</span>
       `;
-      div.classList.add('product')
-      cartItems.appendChild(div);
-    
+    div.classList.add("product");
+    cartItems.appendChild(div);
+  }
+
+  function renderCart() {
+    cartItems.innerHTML = "";
+    let totalPrice = 0;
+
+    if (cartItems.length > 0) {
+      emptyCartMessage.classList.add("hidden");
+      totalPriceDisplay.classList.add('hidden');
+    } else {
+      emptyCartMessage.classList.remove("hidden");
+    }
   }
 });
