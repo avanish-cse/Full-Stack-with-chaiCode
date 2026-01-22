@@ -2,4 +2,4 @@
 
 Try here:
 
-[Hosted link:]("https://expense-tracker-avanish.netlify.app/")
+"https://expense-tracker-avanish.netlify.app/"
