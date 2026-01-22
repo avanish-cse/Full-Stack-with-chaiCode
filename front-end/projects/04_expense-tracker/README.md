@@ -1,5 +1,5 @@
 # Expense Tracker with Local Storage
-# Try here: 
 
+Try here:
 
-# link(" https://expense-tracker-avanish.netlify.app/" )
+[Hosted link:]("https://expense-tracker-avanish.netlify.app/")
