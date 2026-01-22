@@ -57,6 +57,10 @@ button {
   transition: background-color 0.3s;
 }
 
+.selected{
+  background-color: #3700b3;
+}
+
 button:hover {
   background-color: #3700b3;
 }
